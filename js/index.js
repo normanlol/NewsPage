@@ -1,6 +1,11 @@
 if (!localStorage.getItem("c")) {localStorage.setItem('c', 'us')}
 apply()
-getNews() 
+getNews()
+
+setInterval(function() {
+	genDate()
+}, 5 * 60 * 1000);
+ 
 
 function getNews() {
 	document.getElementById("deets").innerHTML = "Getting the top stories..."
