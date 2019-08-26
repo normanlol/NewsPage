@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>NewsPage | One Stop Shop for Nothing but News</title>
+		<link href="css/style.css" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Lexend+Deca|Montserrat|Raleway|Roboto&display=swap" rel="stylesheet"> 
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	</head>
+	<body>
+		<div id="loading">
+			<p id="deets"></p>
+			<div id="loader"></div>
+		</div>
+		<div id="topStory" onmouseover="document.getElementById('tsImage').style = 'height:600px;'" onmouseout="document.getElementById('tsImage').style = 'height:500px;'">
+			<img id="tsImage">
+			<div id="tsContent">
+				<h1 id="tsTitle"></h1>
+				<p id="tsDesc"></p>
+				<a id="tsRM">Read More</a>
+			</div>
+		</div>
+		<div style="height:10px;"></div>
+		<center>
+			<h1 id="title">NewsPage<sup>ALPHA</sup></h1>
+			<p>Your #1 quick and easy place to get all the latest news when you need it.</p>
+			<input id="search" placeholder="Search for news on your favorite topics."><button id="search-btn">Go</button><br>
+			<button id="settings-btn" class="material-icons" onclick="document.getElementById('settings').style.display = 'block';">settings</button>
+			<div style="height:5px;"></div>
+			<div id="settings">
+				<p style="margin:3px;">NewsPage saves your settings in cookie form.</p>
+				<label>Country: </label>
+				<select id="country">
+					<option value="us">United States</option>
+					<option value="ae">United Arab Emirates</option>
+					<option value="ar">Argentina</option>
+					<option value="at">Austria</option>
+					<option value="au">Australia</option>
+					<option value="be">Belgium</option>
+					<option value="bg">Bulgaria</option>
+					<option value="br">Brazil</option>
+					<option value="ca">Canada</option>
+					<option value="ch">Switzerland</option>
+					<option value="cn">China</option>
+					<option value="co">Colombia</option>
+					<option value="cu">Cuba</option>
+					<option value="cz">Czech Republic</option>
+					<option value="de">Germany</option>
+					<option value="eg">Egypt</option>
+					<option value="fr">France</option>
+					<option value="gb">United Kingdom</option>
+					<option value="gr">Greece</option>
+					<option value="hk">Hong Kong</option>
+					<option value="hu">Hungary</option>
+					<option value="id">Indonesia</option>
+					<option value="ie">Ireland</option>
+					<option value="il">Israel</option>
+					<option value="in">India</option>
+					<option value="it">Italy</option>
+					<option value="jp">Japan</option>
+					<option value="kr">South Korea</option>
+					<option value="lt">Lithuania</option>
+					<option value="lv">Latvia</option>
+					<option value="ma">Morocco</option>
+					<option value="mx">Mexico</option>
+					<option value="my">Malaysia</option>
+					<option value="ng">Nigeria</option>
+					<option value="nl">Netherlands</option>
+					<option value="no">Norway</option>
+					<option value="nz">New Zealand</option>
+					<option value="ph">Philippines</option>
+					<option value="pl">Poland</option>
+					<option value="pt">Portugal</option>
+					<option value="ro">Romania</option>
+					<option value="rs">Serbia</option>
+					<option value="ru">Russia</option>
+					<option value="sa">Saudi Arabia</option>
+					<option value="se">Sweden</option>
+					<option value="sg">Singapore</option>
+					<option value="si">Slovenia</option>
+					<option value="sk">Slovakia</option>
+					<option value="th">Thailand</option>
+					<option value="tr">Turkey</option>
+					<option value="tw">Taiwan</option>
+					<option value="ua">Ukraine</option>
+					<option value="ve">Venezuela</option>
+					<option value="za">South Africa</option>
+				</select>
+				<button onclick="saveSettings()" class="material-icons">save</button>
+			</div>
+			<div style="height:100px;"></div>
+		</center>
+		<div id="footer">
+			<center><p>Powered by <a href="//newsAPI.com">NewsAPI</a>. All news is owned by their respective writers.</p></center>
+		</div>
+		<script src="js/index.js"></script>
+	</body>
+</html>
