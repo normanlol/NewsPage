@@ -3,7 +3,7 @@ apply()
 getNews()
 
 setInterval(function() {
-	genNews();
+	getNews();
 }, 5 * 60 * 1000);
  
 
