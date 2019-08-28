@@ -1,0 +1,32 @@
+<html>
+	<head>
+		<title>API Exhausted Error | NewsAPI</title>
+		<style>
+			body {
+			width:50%
+			}
+			p {
+				font-family:verdana;
+			}
+		</style>
+	</head>
+	<body>
+		<p>If you are seeing this screen, it means our API is
+		rate limiting NewsPage's API key. NewsPage uses a free 
+		account because our developer, n0rmancodes, is a broke high
+		school student. In order to fix this, please register for a
+		key <a href="https://newsapi.org/register">here</a>. This
+		key is saved in your browser and will not be shared with
+		n0rmancodes, nor anybody except yourself. When you recieve your API key, you can
+		enter it below. Thank you for understanding!</p>
+		<input id="backupApiKey" style="width:500px;" placeholder="Please enter API key here."><button onclick="saveIt()">Save It</button>
+		<p id="status"></p>
+		<script>
+			function saveIt() {
+				document.getElementById("status").innerHTML = "Saving..."
+				localStorage.setItem("backupKey", document.getElementById("backupApiKey").value);
+				document.getElementById("status").innerHTML = "Saved! You can return home now."
+			}
+		</script>
+	</body>
+</html>

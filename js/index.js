@@ -1,6 +1,12 @@
 if (!localStorage.getItem("c")) {localStorage.setItem('c', 'us')}
 apply();
 getNews();
+var s = document.getElementById("search");
+s.addEventListener("keydown", function (e) {
+    if (e.keyCode == 13) {
+		search();
+	} 
+});
 
 setInterval(function() {
 	getNews();
@@ -12,13 +18,18 @@ function getNews() {
 	document.getElementById("loading1").style.display = 'block';
 	document.getElementById("loading2").style.display = 'block';
 	document.getElementById("loading3").style.display = 'block';
-	document.getElementById("deets").innerHTML = "Getting the top stories..."
+	document.getElementById("deets").innerHTML = "Please wait..."
 	const Http = new XMLHttpRequest();
     const url = 'https://newsapi.org/v2/top-headlines?country=' + localStorage.getItem('c') + '&apiKey=af3de0ad8360434493a8cad8564cdf7f';
     Http.open("GET", url);
     Http.send();
     Http.onreadystatechange=(e)=>{
 		var json = JSON.parse(Http.responseText)
+		document.getElementById("deets").innerHTML = "Getting data..."
+		if (status === "error") {
+			if (json.message === "apiKeyExhausted") {requestAPIKey();}
+			if (json.message === "rateLimited") {requestAPIKey();}
+		}
 		var articleTitle = json.articles[0].title;
 		var articleSrc = json.articles[0].source.name;
 		var articleURL = json.articles[0].url;
@@ -55,10 +66,10 @@ function getNews() {
 		var articleAuth5 = json.articles[5].author;
 		var articleDesc5 = json.articles[5].description;
 		var articleImg5 = json.articles[5].urlToImage;
+		document.getElementById("deets").innerHTML = "Writing data to HTML..."
 		document.getElementById("tsImage").src = articleImg;
 		document.getElementById("tsTitle").innerHTML = articleTitle;
 		document.getElementById("tsTitle").title = "Author: " + articleAuth;
-		if (articleAuth === null) {document.getElementById("tsTitle").title = ""}
 		document.getElementById("tsDesc").innerHTML = "<b>" + articleSrc + "</b>: " + articleDesc;
 		document.getElementById("tsRM").href = articleURL;
 		document.getElementById("loading").style.display = "none";
@@ -92,6 +103,8 @@ function getNews() {
 		document.getElementById("n5Image").src = articleImg5;
 		document.getElementById("n5RM").href = articleURL5;
 		document.getElementById("loading5").style.display = "none";
+		document.getElementById("deets").innerHTML = "Checking for null data..."
+		if (articleAuth === null) {document.getElementById("tsTitle").title = ""}
 		if (articleAuth1 === null) {document.getElementById("n1Title").title = ""}
 		if (articleAuth2 === null) {document.getElementById("n2Title").title = ""}
 		if (articleAuth3 === null) {document.getElementById("n3Title").title = ""}
@@ -104,11 +117,17 @@ function getNews() {
 		if (articleDesc4 === null) {document.getElementById("n4Desc").innerHTML = "<b>" + articleSrc4 + "</b>: No description avaliable."}
 		if (articleDesc5 === null) {document.getElementById("n4Desc").innerHTML = "<b>" + articleSrc5 + "</b>: No description avaliable."}
 		if (articleImg === null) {document.getElementById("tsImg").src = "img/noimg.jpg"}
+		if (articleImg === "") {document.getElementById("tsImg").src = "img/noimg.jpg"}
 		if (articleImg1 === null) {document.getElementById("n1Image").src = "img/noimg.jpg"}
+		if (articleImg1 === "") {document.getElementById("n1Image").src = "img/noimg.jpg"}
 		if (articleImg2 === null) {document.getElementById("n2Image").src = "img/noimg.jpg"}
+		if (articleImg2 === "") {document.getElementById("n2Image").src = "img/noimg.jpg"}
 		if (articleImg3 === null) {document.getElementById("n3Image").src = "img/noimg.jpg"}
+		if (articleImg3 === "") {document.getElementById("n3Image").src = "img/noimg.jpg"}
 		if (articleImg4 === null) {document.getElementById("n4Image").src = "img/noimg.jpg"}
+		if (articleImg4 === "") {document.getElementById("n4Image").src = "img/noimg.jpg"}
 		if (articleImg5 === null) {document.getElementById("n5Image").src = "img/noimg.jpg"}
+		if (articleImg5 === "") {document.getElementById("n5Image").src = "img/noimg.jpg"}
  	}
 }
 
@@ -119,4 +138,15 @@ function apply() {
 function saveSettings() {
 	localStorage.setItem('c', document.getElementById('country').value)
 	location.reload();
+}
+
+function search() {
+	var q = document.getElementById("search").value;
+	document.getElementById("search").diasbled = true;
+	if (window.location.href.match("https://")) {window.open("https://n0rmancodes.github.io/NewsPage/search?q=" + q, "_self")}
+	if (window.location.href.match("file://")) {window.open("file:///C:/Users/norma/Documents/GitHub/NewsPage/search/index.html?q=" +q, "_self")}
+}
+
+function requestAPIKey() {
+	window.open("reqAPI", "_self")
 }

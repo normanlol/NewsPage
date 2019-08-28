@@ -22,9 +22,9 @@
 		</div>
 		<div style="height:10px;"></div>
 		<center>
-			<h1 id="title">NewsPage<sup>ALPHA</sup></h1>
+			<h1 id="title">NewsPage<sup>beta</sup></h1>
 			<p>Your #1 quick and easy place to get all the latest news when you need it.</p>
-			<input id="search" placeholder="Search for news on your favorite topics."><button id="search-btn">Go</button><br>
+			<input id="search" autocomplete="off" placeholder="Search for news on your favorite topics."><button onclick="search()" id="search-btn">Go</button><br>
 			<button id="settings-btn" class="material-icons" onclick="document.getElementById('settings').style.display = 'block';">settings</button><button class="material-icons" id="refresh-btn" onclick="getNews()">refresh</button>
 			<div style="height:5px;"></div>
 			<div id="settings">

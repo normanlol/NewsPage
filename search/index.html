@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Search | NewsPage</title>
+		<link href="css/style.css" rel="stylesheet">
+		<link rel="shortcut icon" href="favicon.ico">
+		<link href="https://fonts.googleapis.com/css?family=Lexend+Deca|Montserrat|Raleway|Roboto&display=swap" rel="stylesheet"> 
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	</head>
+	<body>
+		<center><div id="header">
+			<p>Search NewsPage for articles, up to about a month ago.</p>
+			<input id="search" autocomplete="off" placeholder="Search for news on your favorite topics."><button onclick="search()" id="search-btn">Go</button><br>
+			<div style="height:10px;"></div>
+		</div></center>
+		<div id="results">
+			<div style="height:25px;"></div>
+			<center><div id="loading">
+				<div id="loader"></div>
+				<p id="deets">Please wait...</p>
+			</div></center>
+			<div id="noSearch" style="display:none;">
+				<center><p>Please search for something.</p></center>
+			</div>
+			<div id="tR" style="display:none;">
+				<center><h1>Top Results</h1></center>
+				<div id="topStory" onmouseover="document.getElementById('tsImage').style = 'height:400px;'" onmouseout="document.getElementById('tsImage').style = 'height:300px;'">
+					<img id="tsImage" src="img/noimg.jpg">
+					<div id="tsContent">
+						<h1 id="tsTitle"></h1>
+						<p id="tsDesc"></p>
+						<a id="tsRM">Read More</a>
+					</div>
+				</div>
+				<div id="story1" onmouseover="document.getElementById('n1Image').style = 'height:400px;'" onmouseout="document.getElementById('n1Image').style = 'height:300px;'">
+					<img id="n1Image" src="img/noimg.jpg">
+					<div id="newsStory1">
+					<h1 id="n1Title"></h1>
+					<p id="n1Desc"></p>
+					<a id="n1RM">Read More</a>
+				</div>
+				<div id="story2" onmouseover="document.getElementById('n2Image').style = 'height:400px;'" onmouseout="document.getElementById('n2Image').style = 'height:300px;'">
+					<img id="n2Image" src="img/noimg.jpg">
+					<div id="newsStory2">
+					<h1 id="n2Title"></h1>
+					<p id="n2Desc"></p>
+					<a id="n2RM">Read More</a>
+				</div>
+			</div>
+			<div style="height:25px;"></div>
+		</div>
+		<div id="footer">
+			<center><p style="color:black;">Powered by <a href="//newsAPI.com">NewsAPI</a>. All news is owned by their respective writers.</p></center>
+		</div>
+		<div style="height:51px;"></div>
+		<script src="js/index.js"></script>
+	</body>
+</html>
