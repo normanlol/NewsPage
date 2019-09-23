@@ -141,7 +141,7 @@ function saveSettings() {
 }
 
 function search() {
-	var q = document.getElementById("search").value;
+	var q = encodeURIComponent(document.getElementById("search").value);
 	document.getElementById("search").diasbled = true;
 	if (window.location.href.match("https://")) {window.open("https://n0rmancodes.github.io/NewsPage/search?q=" + q, "_self")}
 	if (window.location.href.match("file://")) {window.open("file:///C:/Users/norma/Documents/GitHub/NewsPage/search/index.html?q=" +q, "_self")}

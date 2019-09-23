@@ -74,7 +74,7 @@ body {
 	transition: color 1s;
 }
 
-#tsRM:hover, #n1RM:hover, #n2RM:hover, #n3RM:hover, #n4RM:hover, #n5RM:hover{
+#tsRM:hover, #n1RM:hover, #n2RM:hover, #n3RM:hover, #n4RM:hover, #n5RM:hover {
 	color: black;
 }
 

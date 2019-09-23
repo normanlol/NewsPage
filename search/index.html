@@ -13,15 +13,15 @@
 			<input id="search" autocomplete="off" placeholder="Search for news on your favorite topics."><button onclick="search()" id="search-btn">Go</button><br>
 			<div style="height:10px;"></div>
 		</div></center>
+		<div id="noResults" style="display:none;">
+			<center><p><span class="material-icons">error</span><br>No results were found in your country for your query.</p></center>
+		</div>
 		<div id="results">
 			<div style="height:25px;"></div>
 			<center><div id="loading">
 				<div id="loader"></div>
 				<p id="deets">Please wait...</p>
 			</div></center>
-			<div id="noSearch" style="display:none;">
-				<center><p>Please search for something.</p></center>
-			</div>
 			<div id="tR" style="display:none;">
 				<center><h1>Top Results</h1></center>
 				<div id="topStory" onmouseover="document.getElementById('tsImage').style = 'height:400px;'" onmouseout="document.getElementById('tsImage').style = 'height:300px;'">
