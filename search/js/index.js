@@ -11,7 +11,7 @@ s.addEventListener("keydown", function (e) {
 
 function checkURL() {
 	if (window.location.href.match("https://")) {var q = window.location.href.substring(50, 999)}
-	if (window.location.href.match("file://")) {var q = window.location.href.substring(69, 999)}
+	if (window.location.href.match("file://")) {var q = window.location.href.substring(70, 999)}
 	document.getElementById("search").value = decodeURIComponent(q);
 	document.getElementById("deets").innerHTML = "Searching NewsAPI's database..."
 	const Http = new XMLHttpRequest();
