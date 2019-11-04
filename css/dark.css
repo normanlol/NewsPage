@@ -19,6 +19,11 @@ iframe {
 	margin-right:5px;
 }
 
+.tsEmbed {
+	width:500px;
+	height:275px;
+}
+
 input {
 	width:400px;
 	height:50px;

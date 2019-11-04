@@ -18,6 +18,11 @@ iframe {
 	padding:5px;
 }
 
+.tsEmbed {
+	width:500px;
+	height:275px;
+}
+
 #search-btn {
 	width:90px;
 	height:50px;
