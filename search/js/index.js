@@ -10,7 +10,7 @@ s.addEventListener("keydown", function (e) {
 });
 
 function checkURL() {
-	if (window.location.href.match("https://")) {var q = window.location.href.substring(50, 999)}
+	if (window.location.href.match("https://")) {var q = window.location.href.substring(49, 999)}
 	if (window.location.href.match("file://")) {var q = window.location.href.substring(70, 999)}
 	document.getElementById("search").value = decodeURIComponent(q);
 	document.getElementById("deets").innerHTML = "Searching NewsAPI's database..."
@@ -25,9 +25,9 @@ function checkURL() {
 			if (json.message === "apiKeyExhausted") {requestAPIKey();}
 			if (json.message === "rateLimited") {requestAPIKey();}
 		}
-		if (json.totalResults === 0)
-			{noResults();} 
-		else {
+		if (json.totalResults === 0) {
+			noResults();
+		} else {
 			var articleTitle = json.articles[0].title;
 			var articleSrc = json.articles[0].source.name;
 			var articleURL = json.articles[0].url;

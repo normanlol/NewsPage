@@ -1,0 +1,191 @@
+p, label {
+	font-family: 'Raleway', sans-serif;
+	color:white;
+}
+
+a {
+	color:red;
+}
+
+body {
+	background-color:#282828;
+}
+
+input {
+	width:400px;
+	height:50px;
+	border-radius:10px;
+	border-width:0px;
+	background-color:#1e1e1e;
+	color:white;
+	padding:5px;
+}
+
+#search-btn {
+	width:90px;
+	height:50px;
+	border-radius:10px;
+	border-width:0px;
+	background-color:#1e1e1e;
+	color:white;
+	cursor:pointer;
+}
+
+#refresh-btn {
+	text-align:center;
+	border-radius:10px;
+	border-width:0px;
+	background-color:transparent;
+}
+
+#title {
+	color:#D7D7D7;
+	font-family:'Montserrat', sans-serif;
+	font-size:72px;
+	-webkit-transition: font-size 2s; /* For Safari 3.1 to 6.0 */
+	transition: font-size 2s;
+	margin-bottom:0px;
+	margin-top: 48px;
+}
+
+#title:hover {
+	font-size: 75px;
+}
+
+#loader {
+	border: 16px solid #f3f3f3; /* Light grey */
+	border-top: 16px solid #3498db; /* Blue */
+	border-radius: 50%;
+	width: 60px;
+	height: 60px;
+	animation: spin 2s cubic-bezier(.86,0,.07,1) infinite
+}
+
+@keyframes spin {
+	0% { transform: rotate(0deg); }
+	100% { transform: rotate(360deg); }
+}
+
+#footer {
+	position:fixed;
+	left:0px;
+	bottom:0px;
+	width:100%;
+	overflow: hidden;
+	background-color:#0C0C0C;
+}
+
+#topStory {
+	position: relative;
+}
+
+#tsImage {
+	width:100%;
+	height:500px;
+	object-fit: cover;
+	border-radius:10px;
+	-webkit-transition: height 2s; /* For Safari 3.1 to 6.0 */
+	transition: height 2s;
+}
+
+#tsContent {
+	position: absolute;
+	width:100%;
+	top:0px;
+	left:0px;
+	height:500px;
+	text-align:right;
+	color:white;
+	background: linear-gradient(180deg, rgba(40,40,40,1) 0%, rgba(255,255,255,0) 100%);
+	border-radius:10px;
+	-webkit-transition: height 2s; /* For Safari 3.1 to 6.0 */
+	transition: height 2s;
+}
+
+#deets {
+	color:black;
+}
+
+#tsContent:hover {
+	height: 600px;
+}
+
+#tsRM, #n1RM, #n2RM, #n3RM, #n4RM, #n5RM {
+	margin:10px;
+	cursor: pointer;
+	color:#89cff0;
+	font-family:'Montserrat', sans-serif;
+	font-size:14px;
+	border-width: 0px;
+	-webkit-transition: color 1s; /* For Safari 3.1 to 6.0 */
+	transition: color 1s;
+}
+
+#tsRM:hover, #n1RM:hover, #n2RM:hover, #n3RM:hover, #n4RM:hover, #n5RM:hover{
+	color: #89e9f0;
+}
+
+#tsTitle {
+	color:white;
+	margin:10px;
+	font-family: 'Lexend Deca', sans-serif;
+	font-size:40px;
+}
+
+#tsDesc {
+	color:white;
+	margin:10px;
+	font-family: 'Roboto', sans-serif;
+}
+
+#settings-btn {
+	text-align:center;
+	border-radius:10px;
+	border-width:0px;
+	background-color:transparent;
+}
+
+#settings {
+	display:none;
+	background-color:#0C0C0C;
+	width:500px;
+}
+
+#n1Title, #n2Title, #n3Title, #n4Title, #n5Title{
+	color:white;
+	margin:10px;
+	font-family: 'Lexend Deca', sans-serif;
+	font-size:28px;
+}
+
+#n1Image, #n2Image, #n3Image, #n4Image, #n5Image{
+	width:100%;
+	height:300px;
+	object-fit: cover;
+	border-radius:10px;
+	-webkit-transition: height 2s; /* For Safari 3.1 to 6.0 */
+	transition: height 2s;
+}
+
+#newsStory1, #newsStory2, #newsStory3,#newsStory4,#newsStory5{
+	position: absolute;
+	width:100%;
+	top:0px;
+	left:0px;
+	height:300px;
+	text-align:right;
+	background: linear-gradient(180deg, rgba(40,40,40,1) 0%, rgba(255,255,255,0) 100%);
+	border-radius:10px;
+	-webkit-transition: height 2s; /* For Safari 3.1 to 6.0 */
+	transition: height 2s;
+}
+
+#story1,#story2,#story3,#story4,#story5{
+	position: relative;
+}
+
+#n1Desc, #n2Desc, #n3Desc,#n4Desc,#n5Desc{
+	color:white;
+	margin:10px;
+	font-family: 'Roboto', sans-serif;
+}

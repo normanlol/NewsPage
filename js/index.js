@@ -1,6 +1,7 @@
 if (!localStorage.getItem("c")) {localStorage.setItem('c', 'us')}
 apply();
 getNews();
+
 var s = document.getElementById("search");
 s.addEventListener("keydown", function (e) {
     if (e.keyCode == 13) {
@@ -133,10 +134,12 @@ function getNews() {
 
 function apply() {
 	document.getElementById('country').value = localStorage.getItem('c')
+	document.getElementById('theme').value = localStorage.getItem('npTheme')
 }
 
 function saveSettings() {
-	localStorage.setItem('c', document.getElementById('country').value)
+	localStorage.setItem('c', document.getElementById("country").value);
+	localStorage.setItem('npTheme', document.getElementById("npTheme").value);
 	location.reload();
 }
 

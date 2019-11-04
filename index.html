@@ -2,10 +2,14 @@
 <html>
 	<head>
 		<title>NewsPage | One Stop Shop for Nothing but News</title>
-		<link href="css/style.css" rel="stylesheet">
+		<link href="css/style.css" id="theme" rel="stylesheet">
 		<link rel="shortcut icon" href="favicon.ico">
 		<link href="https://fonts.googleapis.com/css?family=Lexend+Deca|Montserrat|Raleway|Roboto&display=swap" rel="stylesheet"> 
 		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<script>
+			if (localStorage.getItem("npTheme") === "2") {document.getElementById("theme").href = "css/dark.css"}
+			else {document.getElementById("theme").href = "css/style.css"}
+		</script>
 	</head>
 	<body>
 		<div id="topStory" onmouseover="document.getElementById('tsImage').style = 'height:600px;'" onmouseout="document.getElementById('tsImage').style = 'height:500px;'">
@@ -86,6 +90,12 @@
 					<option value="ve">Venezuela</option>
 					<option value="za">South Africa</option>
 				</select><br>
+				<label>Theme:</label>
+				<select id="npTheme">
+					<option value="1">White</option>
+					<option value="2">Black</option>
+				</select><br>
+				<br>
 				<button onclick="saveSettings()" class="material-icons">save</button>
 			</div>
 			<div style="height:100px;">
