@@ -1,2 +1,11 @@
 # NewsPage
-Your one stop shop for all news, all the time. Updates all news every 5 minutes. All news is sourced from [newsAPI](https://newsapi.org). All of this for free, without ads. If you want even more up to date information through more requests being avaliable, consider donating to [my paypal](https://paypal.me/normanrugg).
+Your one stop shop for all news, all the time. 
+
+## Features
+Features include:
+- A light mode and dark mode (changeable in settings)
+- High quality thumbnails of articles
+- Country selection for nationwide news
+- Embeds YouTube videos when avaliable
+- Search for news on certain topics
+And much, much more!
