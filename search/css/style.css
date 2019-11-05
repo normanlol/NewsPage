@@ -15,6 +15,16 @@ input {
 	border-width:0px;
 }
 
+iframe {
+	border-radius:10px;
+	border-color:transparent;
+	width:300px;
+	height:150px;
+	margin-right:5px;
+	-webkit-transition: height 2s, width 2s; /* For Safari 3.1 to 6.0 */
+	transition: height 2s, width 2s;
+}
+
 body {
 	background-color:#282828;
 }

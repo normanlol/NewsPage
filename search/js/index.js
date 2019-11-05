@@ -11,7 +11,7 @@ s.addEventListener("keydown", function (e) {
 
 function checkURL() {
 	if (window.location.href.match("https://")) {var q = window.location.href.substring(49, 999)}
-	if (window.location.href.match("file://")) {var q = window.location.href.substring(70, 999)}
+	if (window.location.href.match("file://")) {var q = window.location.href.substring(69, 999)}
 	document.getElementById("search").value = decodeURIComponent(q);
 	document.getElementById("deets").innerHTML = "Searching NewsAPI's database..."
 	const Http = new XMLHttpRequest();
@@ -76,6 +76,15 @@ function checkURL() {
 			if (articleDesc2 === null) {document.getElementById("n2Desc").innerHTML = "<b>" + articleSrc + "</b>: No description avaliable."}
 			if (articleImg2 === null) {document.getElementById("n2Img").src = "img/noimg.jpg"}
 			if (articleImg2 === "") {document.getElementById("n2Image").src = "img/noimg.jpg"}
+			if (articleSrc === "Youtube.com") {
+				document.getElementById("tsVid").innerHTML = '<iframe id="n1Em" src="https://www.youtube-nocookie.com/embed/' + articleURL.substring(32, 43) + '" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
+			}
+			if (articleSrc1 === "Youtube.com") {
+				document.getElementById("n1Vid").innerHTML = '<iframe id="n2Em" src="https://www.youtube-nocookie.com/embed/' + articleURL1.substring(32, 43) + '" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
+			}
+			if (articleSrc2 === "Youtube.com") {
+				document.getElementById("n2Vid").innerHTML = '<iframe id="n3Em" src="https://www.youtube-nocookie.com/embed/' + articleURL2.substring(32, 43) + '" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
+			}
 			document.getElementById("tR").style.display = "block";
 		}
 	}
