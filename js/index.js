@@ -21,7 +21,7 @@ function getNews() {
 	document.getElementById("loading3").style.display = 'block';
 	document.getElementById("deets").innerHTML = "Please wait..."
 	const Http = new XMLHttpRequest();
-    const url = 'https://newsapi.org/v2/top-headlines?country=' + localStorage.getItem('c') + '&apiKey=af3de0ad8360434493a8cad8564cdf7f';
+    const url = 'https://cors-anywhere.herokuapp.com/https://newsapi.org/v2/top-headlines?country=' + localStorage.getItem('c') + '&apiKey=af3de0ad8360434493a8cad8564cdf7f';
     Http.open("GET", url);
     Http.send();
     Http.onreadystatechange=(e)=>{
