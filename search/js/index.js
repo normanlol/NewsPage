@@ -10,12 +10,11 @@ s.addEventListener("keydown", function (e) {
 });
 
 function checkURL() {
-	if (window.location.href.match("https://")) {var q = window.location.href.substring(49, 999)}
-	if (window.location.href.match("file://")) {var q = window.location.href.substring(69, 999)}
+	var q = window.location.search.subtring(3)
 	document.getElementById("search").value = decodeURIComponent(q);
 	document.getElementById("deets").innerHTML = "Searching NewsAPI's database..."
 	const Http = new XMLHttpRequest();
-    const url = 'https://newsapi.org/v2/everything?q=' + encodeURIComponent(q) + '&sortBy=popularity&apiKey=af3de0ad8360434493a8cad8564cdf7f';
+    const url = 'https://cors-anywhere.herokuapp.com/https://newsapi.org/v2/everything?q=' + encodeURIComponent(q) + '&sortBy=popularity&apiKey=af3de0ad8360434493a8cad8564cdf7f';
 	Http.open("GET", url);
     Http.send();
     Http.onreadystatechange=(e)=>{
@@ -93,9 +92,7 @@ function checkURL() {
 function search() {
 	var q = encodeURIComponent(document.getElementById("search").value);
 	document.getElementById("search").diasbled = true;
-	if (window.location.href.match("https://")) {window.open("https://n0rmancodes.github.io/NewsPage/search?q=" + q, "_self")}
-	if (window.location.href.match("file://")) {window.open("file:///C:/Users/norma/Documents/GitHub/NewsPage/search/index.html?q=" +q, "_self")}
-}
+	window.open("search?q=" + q, "_self")
 
 function requestAPIKey() {
 	window.open("reqAPI", "_self")
